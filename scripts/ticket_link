@@ -1,0 +1,5 @@
+#!/bin/bash
+status=`watson status`
+status="${status#*[}"
+status="${status%]*}"
+echo "$status"

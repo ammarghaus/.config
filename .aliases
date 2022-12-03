@@ -1,0 +1,18 @@
+# docker compose shortened
+alias dc='docker compose'
+
+# lazy shortened
+alias lg="lazygit"
+alias lzd='lazydocker'
+
+# one-password sign in
+
+alias open-passwords='export OP_SESSION_nerdsandcompany=(op signin nerdsandcompany --output=raw)'
+
+# config repo
+alias config='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
+alias lazy_config='lazygit --git-dir=$HOME/.config/ --work-tree=$HOME'
+
+# notes repo
+alias notes='/usr/bin/git --git-dir=$HOME/notes/ --work-tree=$HOME'
+alias lazy_notes='lazygit --git-dir=$HOME/notes/ --work-tree=$HOME'

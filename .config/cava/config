@@ -1,0 +1,9 @@
+[input]
+method = portaudio
+source = "Background Music"
+
+[output]
+channels = stereo
+
+[color]
+foreground = green

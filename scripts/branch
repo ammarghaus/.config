@@ -1,0 +1,10 @@
+#!/bin/bash
+git rev-parse  2>/dev/null && git branch -v | \
+	awk '$1 ~ /^\*/ {
+		match($0, /\[(.*?)\]/)
+		delta=substr($0, RSTART+1, RLENGTH-2)
+		sub(/behind /, "", delta)
+		sub(/ahead /,"", delta)
+		sub(/, /,"", delta)
+		print "שׂ" $2, delta
+	}'

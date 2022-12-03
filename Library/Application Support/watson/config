@@ -1,0 +1,5 @@
+[options]
+stop_on_start = true
+stop_on_restart = true
+pager = false
+log_current = true

@@ -1,0 +1,7 @@
+[core]
+	excludesfile = /Users/ammar/.gitignore
+[user]
+	name = ammarghaus
+	email = ammarghaus@gmail.com
+[init]
+	defaultBranch = main

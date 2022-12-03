@@ -1,0 +1,5 @@
+#!/bin/bash
+jira sprint list --current --show-all-issues -a $(jira me) --plain --no-headers \
+	-s'In Progress' --columns title,summary |
+	fzf --height 40% --select-1| awk '{ print $1 }'
+

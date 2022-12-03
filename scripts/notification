@@ -1,0 +1,9 @@
+#!/bin/bash
+
+file_mod=`date -r ~/notification +%s`
+date_limit=`date -v-30S +%s`
+
+if [ $file_mod -ge $date_limit ];
+then
+	cat ~/notification
+fi

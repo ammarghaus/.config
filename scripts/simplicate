@@ -1,0 +1,5 @@
+#!/bin/bash
+simplicate=`simpl show -s $(date -v'-monday' +'%Y-%m-%d')"T00:00:00" -e $(date +'%Y-%m-%dT%H:%M:%S') | \
+	awk '{ if ($1 == "Total")  a+=$2 }; END { print a }'`
+
+printf "%.*f\n" "2" "$simplicate"

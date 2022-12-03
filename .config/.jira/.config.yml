@@ -1,0 +1,51 @@
+board:
+  id: 169
+  name: Team 4
+  type: scrum
+epic:
+  name: customfield_10007
+  link: customfield_10006
+installation: Cloud
+issue:
+  types:
+  - id: "5"
+    name: Sub-task
+    handle: Sub-task
+    subtask: true
+  - id: "1"
+    name: Bug
+    handle: Bug
+    subtask: false
+  - id: "6"
+    name: Epic
+    handle: Epic
+    subtask: false
+  - id: "7"
+    name: Story
+    handle: Story
+    subtask: false
+  - id: "3"
+    name: Task
+    handle: Task
+    subtask: false
+  - id: "10100"
+    name: Fastlane
+    handle: Fastlane
+    subtask: false
+  - id: "2"
+    name: New Feature
+    handle: New Feature
+    subtask: false
+  - id: "4"
+    name: Improvement
+    handle: Improvement
+    subtask: false
+  - id: "10000"
+    name: IT Help
+    handle: IT Help
+    subtask: false
+login: a.ghaus@nerds.company
+project:
+  key: MS
+  type: classic
+server: https://nerdsandcompany.atlassian.net

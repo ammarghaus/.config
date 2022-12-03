@@ -1,0 +1,3 @@
+#!/bin/bash
+gcalcli --nocolor agenda --nostarted "`date`" "`date -v +1d -Idate`"| head -n 2 | tail -n 1 | \
+	sed 's/\([0-9]\)  \([0-9]\)/\1 | \2/g'

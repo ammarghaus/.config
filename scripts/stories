@@ -1,0 +1,3 @@
+#!/bin/bash
+jira sprint list --current --show-all-issues -a $(jira me) --plain --no-headers -s~Done \
+	--columns status,summary

@@ -1,0 +1,188 @@
+# Modes:
+::  default    :  yabai  -m  config  active_window_border_color  0xff00ff00
+::  layout     :  yabai  -m  config  active_window_border_color  0xffff0000
+::  timer      :  yabai  -m  config  active_window_border_color  0xffff00ee
+::  window     :  yabai  -m  config  active_window_border_color  0xff0000ff
+::  wallpaper  :  yabai  -m  config  active_window_border_color  0xffffff00
+::  display    :  yabai  -m  config  active_window_border_color  0xffb97fcf
+::  floating   :  yabai  -m  config  active_window_border_color  0xff00ccff
+::  stack      :  yabai  -m  config  active_window_border_color  0xff245551
+::  music      :  yabai  -m  config  active_window_border_color  0xff886600
+
+# from any mode, activate mode 'default'
+default, window, floating, layout, display, wallpaper, stack, timer, music < ctrl - escape ; default
+
+# from 'default' mode, activate mode 'window'
+alt + ctrl - w ; window
+
+# balance size of windows
+window < alt - 0 : yabai -m space --balance
+
+# increase window size
+window < alt - 0x45 : yabai -m window --resize left:-20:0;\
+				  yabai -m window --resize top:0:-20;\
+				  yabai -m window --resize right:20:0;\
+				  yabai -m window --resize bottom:0:20
+
+window < alt - h : yabai -m window --resize left:-20:0
+window < shift + alt - h : yabai -m window --resize left:20:0
+window < alt - k : yabai -m window --resize top:0:-20
+window < shift + alt - k : yabai -m window --resize top:0:20
+window < alt - j : yabai -m window --resize bottom:0:20
+window < shift + alt - j : yabai -m window --resize bottom:0:-20
+window < alt - l : yabai -m window --resize right:20:0
+window < shift + alt - l : yabai -m window --resize right:-20:0
+
+# decrease window size
+window < alt - 0x1B : yabai -m window --resize bottom:0:-20;\
+				  yabai -m window --resize top:0:20;\
+				  yabai -m window --resize left:20:0;\
+				  yabai -m window --resize right:-20:0
+
+window < shift + alt - h : yabai -m window --resize left:20:0
+window < shift + alt - k : yabai -m window --resize top:0:20
+window < shift + alt - j : yabai -m window --resize bottom:0:-20
+window < shift + alt - l : yabai -m window --resize right:-20:0
+
+# padding
+window < alt - p : yabai -m space --padding rel:10:10:10:10
+window < shift + alt - p : yabai -m space --padding rel:-10:-10:-10:-10
+
+# gaps
+window < alt - g : yabai -m space --gap rel:10
+window < shift + alt - g : yabai -m space --gap rel:-10
+
+# Preset padding
+window < alt - s : yabai -m space --padding abs:50:50:50:50; skhd -k "ctrl - escape"
+window < alt - b : yabai -m space --padding abs:100:100:100:100; skhd -k "ctrl - escape"
+
+# send window to monitor and follow focus
+# from 'window' mode, activate mode 'floating'
+ctrl + alt - d; display
+display < alt - n  : yabai -m window --display next && yabai -m display --focus next; skhd -k "ctrl - escape"
+display < alt - p  : yabai -m window --display prev && yabai -m display --focus prev; skhd -k "ctrl - escape"
+
+# move floating window
+# from 'window' mode, activate mode 'floating'
+ctrl + alt - f; floating
+
+floating < alt - h : yabai -m window --move rel:-20:0
+floating < alt - j : yabai -m window --move rel:0:20
+floating < alt - k : yabai -m window --move rel:0:-20
+floating < alt - l : yabai -m window --move rel:20:0
+
+floating < alt - f : yabai -m window --grid 1:1:0:0:1:1
+floating < shift + alt - f : yabai -m window --grid 4:4:1:1:2:2
+
+# stack window
+# from 'window' mode, activate mode 'stack'
+ctrl + alt - s; stack
+
+stack < alt - h : yabai -m window --stack west
+stack < alt - j : yabai -m window --stack south
+stack < alt - k : yabai -m window --stack north
+stack < alt - l : yabai -m window --stack east
+
+# from 'default' mode, activate mode 'layout'
+ctrl + alt - l ; layout
+
+layout < alt - b : yabai -m config layout bsp; skhd -k "ctrl - escape"
+layout < alt - s : yabai -m config layout stack; skhd -k "ctrl - escape"
+
+# from 'default' mode, activate mode 'wallpaper'
+ctrl + alt - b ; wallpaper
+# wallpapers
+wallpaper < alt - w : wallpapers; skhd -k "ctrl - escape"
+wallpaper < alt - c : collect_wallpaper; skhd -k "ctrl - escape"
+wallpaper < alt - k : kick_wallpaper && wallpapers; skhd -k "ctrl - escape"
+wallpaper < alt - b : black_wallpaper; skhd -k "ctrl - escape"
+
+# from 'default' mode, activate mode 'timer'
+ctrl + alt - t ; timer
+
+timer < alt - c : sb; skhd -k "ctrl - escape"
+timer < shift + alt - s : su; skhd -k "ctrl - escape"
+timer < alt - s : watson stop; skhd -k "ctrl - escape"
+timer < alt - r : watson restart -g; skhd -k "ctrl - escape"
+timer < shift + alt - r : watson restart -2 -g; skhd -k "ctrl - escape"
+
+# from 'default' mode, activate mode 'music'
+alt + ctrl - m ; music
+music < alt - n : osascript -e 'tell application "Spotify" to next track'; skhd -k "ctrl - escape"
+music < alt - p : osascript -e 'tell application "Spotify" to previous track'; skhd -k "ctrl - escape"
+music < alt - 0x31 : osascript -e 'tell application "Spotify" to playpause'; skhd -k "ctrl - escape"
+
+# toggle window zoom
+# alt - d : yabai -m window --toggle zoom-parent
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# Dmenu-mac
+# alt - space : dmenu-mac
+
+# focus stacked window
+alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+alt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+
+# focus window
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - k : yabai -m window --focus north
+alt - j : yabai -m window --focus south
+
+# swap managed window
+shift + alt - h : yabai -m window --swap  west
+shift + alt - l : yabai -m window --swap  east
+shift + alt - k : yabai -m window --swap  north
+shift + alt - j : yabai -m window --swap  south
+
+# focus monitor
+ctrl + alt - v  : yabai -m display --focus next
+ctrl + alt - z  : yabai -m display --focus prev
+# ctrl + alt - 3  : yabai -m display --focus 3
+
+# Rotate windows
+alt - r : yabai -m space --rotate 90
+
+# toggle window split type
+# alt - e : yabai -m window --toggle split
+
+# float / unfloat window and center on screen
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
+
+# toggle sticky(+float), topmost, picture-in-picture
+# alt - p : yabai -m window --toggle sticky;\
+#           yabai -m window --toggle topmost;\
+#           yabai -m window --toggle pip#
+
+# Restart yabai
+alt + ctrl - r : launchctl kickstart -k "gui/"(id -u)"/homebrew.mxcl.yabai"
+
+# Openers
+shift + ctrl - e : open /Applications/Microsoft\ Edge.app/
+shift + ctrl - q : open /Applications/qutebrowser.app/
+shift + ctrl - o : open /Applications/Alacritty.app/
+shift + ctrl - i : open /Applications/Slack.app/
+shift + ctrl - k : open /Applications/Spotify.app/
+shift + ctrl - 0x2B : open /Applications/Discord.app/
+shift + ctrl - x : open /Applications/WhatsApp.app/
+
+# Tmux sessions
+shift + ctrl - g : alacritty msg create-window -e tmux new -A -s shorty
+shift + ctrl - c : alacritty msg create-window -e tmux new -A -s agenda calcurse
+
+# Link openers
+shift + ctrl - b : open 'https://github.com/orgs/nerds-and-company/packages?repo_name=blocks'
+shift + ctrl - m : jira open
+shift + ctrl - w : open 'https://nerds.simplicate.nl/hours/register'
+shift + ctrl - v : open 'https://mail.google.com/mail/u/0/#inbox'
+shift + ctrl - t : jira open (ticket_link)
+shift + ctrl - d : open 'https://calendar.google.com/calendar/u/0/r'
+
+# translate page in edge
+shift + alt - y [
+	"Microsoft Edge": cliclick c:. kd:shift kp:f10 ku:shift \
+				 kp:arrow-up kp:arrow-up kp:arrow-up kp:arrow-up kp:arrow-up kp:arrow-up kp:arrow-up \
+				 kp:return
+]
+

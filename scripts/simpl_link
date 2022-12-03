@@ -1,0 +1,2 @@
+#!/bin/bash
+awk '{ if ($1 == "alias") print (substr($3, 2, length($3)-2)) }' ~/.simpl/links.toml | fzf --height=40%

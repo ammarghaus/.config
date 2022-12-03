@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/local/bin/wallpaper set --screen 0 $(ls /Users/ammar/wallpapers/**/*.jpg | sort -R |tail -1)

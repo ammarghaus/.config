@@ -1,0 +1,258 @@
+[dpg-pm]
+alias = "dpg-pm"
+project = "project:5d99a79caa0b6f38feaad60b7a7437df"
+service = "service:de3dd78a3a0853f8d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for DPG media - Blocks LXP sprint 13 - Development"
+
+[lvo-t]
+alias = "lvo-t"
+project = "project:ef19829afee6fd61feaad60b7a7437df"
+service = "service:55a9277a1a1b1a43d8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for Inname en doorontwikkeling MijnGrond - Development"
+
+[ned-pr-bd]
+alias = "ned-pr-bd"
+project = "project:b6bb03eea230bb8dfeaad60b7a7437df"
+service = "service:040e187c7930c89ed8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Development Powerrouter - Development"
+
+[mkb-t]
+alias = "mkb-t"
+project = "project:77589b42d2305ed4feaad60b7a7437df"
+service = "service:b83534dc223bcd82d8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for Advies, design & realisatie MKB Cybertraining.nl - Development"
+
+[vod-t]
+alias = "vod-t"
+project = "project:05f6697ecd73ef75feaad60b7a7437df"
+service = "service:55fc672ca6f4affad8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for VodafoneZiggo Academy & Business Partners Academy - uitzoekwerk & kleine fixes - Development"
+
+[wkj-dr-pm]
+alias = "wkj-dr-pm"
+project = "project:7d005e746cfeaa084c13c77ab857ae53"
+service = "service:67d9841da106a7a3bf0d1878087571b9"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Hosting watkiesjij.nl - Domeinregistratie www.watkiesjij.nl"
+
+[lvo-bd]
+alias = "lvo-bd"
+project = "project:ef19829afee6fd61feaad60b7a7437df"
+service = "service:55a9277a1a1b1a43d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Inname en doorontwikkeling MijnGrond - Development"
+
+[prof-bd]
+alias = "prof-bd"
+project = "project:f141b23782e3b0c9feaad60b7a7437df"
+service = "service:59c7c1cebd5322c7d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Profile NaaS 2021 - Development "
+
+[vod-kc-pm]
+alias = "vod-kc-pm"
+project = "project:b191ad951fe998a4feaad60b7a7437df"
+service = "service:4fd5d97bad624ed0d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for VodafoneZiggo Knowledge check results feature - Development"
+
+[ned-pr-pm]
+alias = "ned-pr-pm"
+project = "project:b6bb03eea230bb8dfeaad60b7a7437df"
+service = "service:040e187c7930c89ed8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Nerds team voor Powerrouter - Development"
+
+[dpg-t]
+alias = "dpg-t"
+project = "project:5d99a79caa0b6f38feaad60b7a7437df"
+service = "service:de3dd78a3a0853f8d8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for DPG media - Blocks LXP sprint 13 - Development"
+
+[ll-t]
+alias = "ll-t"
+project = "project:70091ebb2600a845feaad60b7a7437df"
+service = "service:e18e08be9dc3335fd8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for Design en realisatie Loyens & Loeff LXP - Development"
+
+[mkb-pm]
+alias = "mkb-pm"
+project = "project:77589b42d2305ed4feaad60b7a7437df"
+service = "service:b83534dc223bcd82d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Advies, design & realisatie MKB Cybertraining.nl - Development"
+
+[wbcsd-bd]
+alias = "wbcsd-bd"
+project = "project:5590a388c1d2e8f9feaad60b7a7437df"
+service = "service:888c52125c39f556d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Design en realisatie WBCSD LXP - Development"
+
+[blxp-bd]
+alias = "blxp-bd"
+project = "project:a9f4fee83ddcf20bfeaad60b7a7437df"
+service = "service:4a4e70d9e1e4984cd8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Blocks verbeteringen - Development"
+
+[prof-t]
+alias = "prof-t"
+project = "project:f141b23782e3b0c9feaad60b7a7437df"
+service = "service:59c7c1cebd5322c7d8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for Profile NaaS 2021 - Development "
+
+[mkb-bd]
+alias = "mkb-bd"
+project = "project:77589b42d2305ed4feaad60b7a7437df"
+service = "service:b83534dc223bcd82d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Advies, design & realisatie MKB Cybertraining.nl - Development"
+
+[ned-bd]
+alias = "ned-bd"
+project = "project:87f4bbad238cdf3cfeaad60b7a7437df"
+service = "service:7136b5574fb56478d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for NaaS 2020-2021 Nedap Retail (flex) - Development Nedap Retail"
+
+[wbcsd-pm]
+alias = "wbcsd-pm"
+project = "project:5590a388c1d2e8f9feaad60b7a7437df"
+service = "service:888c52125c39f556d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Design en realisatie WBCSD LXP - Development"
+
+[self-ass-p]
+alias = "self-ass-p"
+project = "project:2e7d1588e87a48a8feaad60b7a7437df"
+service = "service:640c36a8ee93e33cd8107a68a60f150e"
+hourtype = "hourstype:14b5208f91d49cf3"
+description = "Project management for WBCSD Self Readiness Assessment - Development"
+
+[ll-bd]
+alias = "ll-bd"
+project = "project:3dc4dc54edcfe6dbfeaad60b7a7437df"
+service = "service:d4730ab50b34ba98d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Sprint 4 Loyens & Loeff (Blocks LXP) - Development"
+
+[lvo-pm]
+alias = "lvo-pm"
+project = "project:ef19829afee6fd61feaad60b7a7437df"
+service = "service:55a9277a1a1b1a43d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Inname en doorontwikkeling MijnGrond - Development"
+
+[vacation]
+alias = "vacation"
+project = "project:fb7faf2b692785ed"
+service = "service:60fc55223786cac3bf0d1878087571b9"
+hourtype = "hourstype:cbb1587b3a4b212aca9dc23db773baf0"
+description = "Vakantie verlof for Interne werkzaamheden - Diversen"
+
+[ade-sso]
+alias = "ade-sso"
+project = "project:cec95df26848b4a7feaad60b7a7437df"
+service = "service:51673e9739114bf9d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for SSO Adidas  - Development"
+
+[blxp-t]
+alias = "blxp-t"
+project = "project:a9f4fee83ddcf20bfeaad60b7a7437df"
+service = "service:4a4e70d9e1e4984cd8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for Blocks verbeteringen - Development"
+
+[prof-pm]
+alias = "prof-pm"
+project = "project:f141b23782e3b0c9feaad60b7a7437df"
+service = "service:59c7c1cebd5322c7d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Profile NaaS 2021 - Development "
+
+[diversen]
+alias = "diversen"
+project = "project:fb7faf2b692785ed"
+service = "service:60fc55223786cac3bf0d1878087571b9"
+hourtype = "hourstype:f6b93b92c9b3b6ce"
+description = "Intern for Interne werkzaamheden - Diversen"
+
+[ned-pr-t]
+alias = "ned-pr-t"
+project = "project:b6bb03eea230bb8dfeaad60b7a7437df"
+service = "service:040e187c7930c89ed8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for Development Powerrouter - Development"
+
+[bc-pm]
+alias = "bc-pm"
+project = "project:db0d0d3f81e25285feaad60b7a7437df"
+service = "service:c095347b642434e6d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Urencontract Bonhoeffer college vanaf mei 2022 - Development"
+
+[self-ass-t]
+alias = "self-ass-t"
+project = "project:2e7d1588e87a48a8feaad60b7a7437df"
+service = "service:640c36a8ee93e33cd8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for WBCSD Self Readiness Assessment - Development"
+
+[ade-bd]
+alias = "ade-bd"
+project = "project:7038e3a48381be34feaad60b7a7437df"
+service = "service:28aff70fd4565142d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for Servicekaart Adidas Q3 2022 - Development"
+
+[self-ass-b]
+alias = "self-ass-b"
+project = "project:2e7d1588e87a48a8feaad60b7a7437df"
+service = "service:640c36a8ee93e33cd8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for WBCSD Self Readiness Assessment - Development"
+
+[vod-bd]
+alias = "vod-bd"
+project = "project:05f6697ecd73ef75feaad60b7a7437df"
+service = "service:55fc672ca6f4affad8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for VodafoneZiggo Academy & Business Partners Academy - uitzoekwerk & kleine fixes - Development"
+
+[blxp-pm]
+alias = "blxp-pm"
+project = "project:a9f4fee83ddcf20bfeaad60b7a7437df"
+service = "service:4a4e70d9e1e4984cd8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for Blocks verbeteringen - Development"
+
+[ned-pm]
+alias = "ned-pm"
+project = "project:87f4bbad238cdf3cfeaad60b7a7437df"
+service = "service:9f86c7964757dcb5d8107a68a60f150e"
+hourtype = "hourstype:aba6ff95260321eaca9dc23db773baf0"
+description = "Project Meeting for NaaS 2020-2021 (flex) - Development"
+
+[dpg-bd]
+alias = "dpg-bd"
+project = "project:5d99a79caa0b6f38feaad60b7a7437df"
+service = "service:de3dd78a3a0853f8d8107a68a60f150e"
+hourtype = "hourstype:6959abdff463875dca9dc23db773baf0"
+description = "Back-end development for DPG media - Blocks LXP sprint 13 - Development"
+
+[wbcsd-t]
+alias = "wbcsd-t"
+project = "project:5590a388c1d2e8f9feaad60b7a7437df"
+service = "service:888c52125c39f556d8107a68a60f150e"
+hourtype = "hourstype:bc53aa2d6b496c1aca9dc23db773baf0"
+description = "Testing for Design en realisatie WBCSD LXP - Development"

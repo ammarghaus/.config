@@ -1,0 +1,2 @@
+#!/bin/bash
+cp $(wallpaper get --screen 0) ~/wallpapers/mine/

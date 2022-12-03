@@ -1,0 +1,12 @@
+#!/bin/bash
+
+watson report -cdGs | \
+	awk -F, '{ if ($4) {
+		if ($3 == "diversen" || $3 ~ /-p.?$/) {
+			print "simpl book",$3,$5/60/60,"-m", "\x22"$4"\x22"
+		}
+		else {
+			print "simpl book",$3,$5/60/60,"-m (issue "$4" | head -n 1)"
+		}
+	} }' | \
+	tail -n+2

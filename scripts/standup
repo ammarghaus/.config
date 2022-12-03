@@ -1,0 +1,14 @@
+#!/bin/bash
+
+watson report -cGs --from $(date -v -1d -Idate) --to $(date -v -1d -Idate)  | tail -n+2 \
+	| awk -F, '{
+	if($4) {
+		if ($3 == "diversen" || $3 ~ /-p.?$/) {
+			print $3"|"$4 "|" $5/3600
+		}
+	else {
+		"issue "$4 | getline issue
+		print $3"|"issue "|" $5/3600
+	}
+}
+}' | column -t -s '|' #| pbcopy

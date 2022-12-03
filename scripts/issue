@@ -1,0 +1,10 @@
+#!/bin/bash
+
+issue=`jira issue view $1 --plain | awk '$1 ~ /^#/'`
+issue="${issue#* # }"
+if [ -z "$issue" ]
+then
+	echo $1
+else
+	echo "$1 : $issue"
+fi

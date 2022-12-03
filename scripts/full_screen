@@ -1,0 +1,3 @@
+#!/bin/bash
+yabai -m query --windows --window | jq '."has-fullscreen-zoom"' | grep -q true || \
+	yabai -m window --toggle zoom-fullscreen

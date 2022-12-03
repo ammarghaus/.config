@@ -1,0 +1,14 @@
+#!/bin/bash
+function join_by {
+  local d=${1-} f=${2-}
+  if shift 2; then
+    printf %s "$f" "${@/#/$d}"
+  fi
+}
+
+options=(
+	"hello"
+	"world"
+)
+
+printf "%s\n" "${options[@]}" | dmenu-mac -p "are you sure?"
