@@ -1,0 +1,8 @@
+#!/bin/bash
+. params
+
+date=${date:-`date -I`}
+
+gcalcli --nocolor agenda $date"T00:00:00" $date"T23:59:59" --tsv \
+	| awk -F\t '{ print $2" to "$4"\t"$5 }' \
+	| sort -u

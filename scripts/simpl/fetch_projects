@@ -1,0 +1,11 @@
+#!/bin/bash
+. `dirname $0`/vars
+
+curl -s -G -H "$auth_key_header" -H "$auth_secret_header" "$base_url""hours/projects" \
+	-d "q[__name]=$1" \
+	-d "q[employee_id]=$employee_id" \
+	-d "q[start_date]=$2" \
+	-d "q[end_date]=$3" \
+	-d "sort=project_name" \
+	| jq -r ".data[] | .organization.name + \": \" + .project_name + \"$separator\" + .id"
+

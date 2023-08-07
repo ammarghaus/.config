@@ -1,0 +1,7 @@
+#!/bin/sh
+
+tmux new -A -s sprint 'jira sprint list --current --show-all-issues \
+	--columns "PRIORITY,TYPE,KEY,SUMMARY,STATUS,ASSIGNEE" \
+	-s~Done --order-by status'
+
+

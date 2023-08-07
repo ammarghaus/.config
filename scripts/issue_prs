@@ -1,0 +1,11 @@
+#!/bin/bash
+
+issue_id=`curl -fsu \`jira me\`:$JIRA_API_TOKEN "https://nerdsandcompany.atlassian.net/rest/api/2/issue/$1" | jq -r '.id'
+		`
+curl -su `jira me`:$JIRA_API_TOKEN \
+	"https://nerdsandcompany.atlassian.net/rest/dev-status/1.0/issue/details?issueId=$issue_id&applicationType=github&dataType=pullrequest" | \
+	jq -r '.detail[] | select(.pullRequests != null) | .pullRequests[] | .id + " " + .source.branch + " > " + .destination.branch + " (" +.url+ ")"' | \
+	fzf -q "$2" --select-1 -m --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all | \
+	awk -F'[()]' '{print $2}'
+
+

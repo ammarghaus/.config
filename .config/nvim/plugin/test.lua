@@ -1,4 +1,4 @@
-vim.g["test#strategy"] = "neovim"
+vim.g["test#strategy"] = "toggleterm"
 vim.g["test#neovim#term_position"] = "botright 30"
 
 local map = vim.api.nvim_set_keymap

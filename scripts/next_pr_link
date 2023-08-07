@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $(gh repo view --json 'url' -q '.url')"/pull/"$(next_pr_nu)

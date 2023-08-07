@@ -1,0 +1,2 @@
+#!/bin/sh
+echo $((1 + $(gh pr list --state 'all' --json 'number' -q '.[].number' --limit 1)))

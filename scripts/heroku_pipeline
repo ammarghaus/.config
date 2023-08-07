@@ -1,0 +1,11 @@
+#!/bin/bash
+app_json=`pathfinder . app.json`
+
+query=""
+if [ ! -z $app_json ]
+then
+	query=`jq -r '.name' $app_json`
+fi
+
+(heroku whoami || heroku login) > /dev/null &&
+	heroku pipelines | tail -n+2 | fzf --select-1 --query "$query$1"

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+
+[ ! -z "`yabai -m query --windows | jq -e '.[]|select(.app | test(\"Spotify\"))'`" ] && \
+	printf "%s\n%s" "`osascript -e 'tell application "Spotify" to get name of current track'`" \
+	       "`osascript -e 'tell application "Spotify" to get artist of current track'`"
+
+echo
+printf "%s" `osascript -e 'tell application "Spotify" to get duration of current track'` / \
+	`osascript -e 'tell application "Spotify" to get player position'`
+
+
+
+# osascript -e 'tell application "Spotify" to get name of current track'                                                                                                                                                              │
+# osascript -e 'tell application "Spotify" to get player position'
+# osascript -e 'tell application "Spotify" to get player state'
+# osascript -e 'tell application "Spotify" to get duration of current track'
+# osascript -e 'tell application "Spotify" to get ePlS of Spotify Suite'
+# osascript -e 'tell application "Spotify" to get ePlS'
+# osascript -e 'tell application "Spotify" return get name of current track'
+
+

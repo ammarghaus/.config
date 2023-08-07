@@ -16,5 +16,5 @@ map('n', '<leader>gp', ':G pull --rebase<CR>', opts)
 map('n', '<leader>gP', ':G push<CR>', opts)
 map('n', '<leader>gPf', ':G push --force-with-lease<CR>', opts)
 map('n', '<leader>pr', ':silent !hub pr show<CR>:redraw!<CR>', opts)
-map('n', '<leader>ci', ':sp term://hub ci-status -v<CR>', opts)
+map('n', '<leader>ci', ':sp term://gh pr checks --watch<CR>', opts)
 

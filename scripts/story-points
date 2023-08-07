@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -fsu `jira me`:$JIRA_API_TOKEN "https://nerdsandcompany.atlassian.net/rest/api/2/issue/$1?fields=summary,customfield_10002" | \
+	jq

@@ -1,8 +1,0 @@
-#!/bin/bash
-log=`watson log -cdG`
-timer=`tail -1 <<< "$log"`
-timer="${timer#* to * }"
-total=`head -1 <<< "$log"`
-total="${total#*(}"
-total="${total%)*}"
-[[ ! -z "$total" || ! -z "$timer" ]] && echo "$total | $timer"

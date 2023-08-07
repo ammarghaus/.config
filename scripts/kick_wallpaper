@@ -1,2 +1,0 @@
-#!/bin/bash
-rm $(wallpaper get --screen 0)

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+hours=${1:-0}
+while [ $hours -lt 24 ]
+do
+	hours=$((10#$hours))
+	r_minutes=${minutes:-${2:-0}}
+	while [ $r_minutes -lt 60 ]
+	do
+		r_minutes=$((10#$r_minutes))
+		printf "%02d:%02d\n" $hours $r_minutes
+		((r_minutes++))
+	done
+		minutes=0
+		((hours++))
+done \
+	| fzf -q "$3" --bind=enter:replace-query+print-query

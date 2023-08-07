@@ -1,0 +1,8 @@
+#!/bin/bash
+
+photo_url=`curl -s -H "Authorization:$PEXEL_API_TOKEN" "https://api.pexels.com/v1/search?query=$1&size=large&orientation=landscape&per_page=80" \
+	| jq -r '.photos[] | .src.large2x' | shuf -n 1`
+
+curl -s $photo_url -o ~/wallpaper
+
+wallpaper set ~/wallpaper

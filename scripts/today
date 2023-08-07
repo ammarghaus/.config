@@ -1,4 +1,0 @@
-#!/bin/sh
-
-watson log -Cd | tail -n+2 | awk 'NF { print $2,$3,$4,$(NF-1)$(NF) }'
-

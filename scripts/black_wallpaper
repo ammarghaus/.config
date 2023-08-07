@@ -1,2 +1,0 @@
-#!/bin/bash
-/usr/local/bin/wallpaper set-solid-color 000000 --screen 0

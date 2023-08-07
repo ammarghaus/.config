@@ -1,0 +1,38 @@
+#!/bin/bash
+. params
+
+current_date=${current_date:-`date -I`}
+mode=${mode:-week}
+
+if [ $mode = 'week' ]
+then
+	start_date=`date -j -I -v -monday -f %Y-%m-%d $current_date`
+	end_date=`date -j -I -v +friday -f %Y-%m-%d $current_date`
+	next_date=`date -j -I -v +1w -f %Y-%m-%d $current_date`
+	previous_date=`date -j -I -v -1w -f %Y-%m-%d $current_date`
+	next_mode=month
+fi
+
+if [ $mode = 'month' ]
+then
+	start_date=`date -j -I -v 1d -f %Y-%m-%d $current_date`
+	end_date=`date -j -I -v +1m -v 1d -v -1d -f %Y-%m-%d $current_date`
+	next_date=`date -j -I -v +1m -f %Y-%m-%d $current_date`
+	previous_date=`date -j -I -v -1m -f %Y-%m-%d $current_date`
+	next_mode=week
+fi
+
+
+curr="$start_date"
+while true; do
+	echo `date -j -f %Y-%m-%d $curr +'%Y-%m-%d (%A)'`
+	[ "$curr" \< "$end_date" ] || break
+	curr=`date -j -v +1d -f %Y-%m-%d $curr +%Y-%m-%d`
+done | fzf \
+	--query "$query" \
+	--bind="ctrl-t:become(date_picker --mode $next_mode --current-date $current_date --query $query)" \
+	--bind="ctrl-n:become(date_picker --mode $mode --current-date $next_date --query $query)" \
+	--bind="ctrl-p:become(date_picker --mode $mode --current-date $previous_date --query $query)" \
+	--bind="ctrl-z:become(date_picker --mode week --query $query --current-date {})" \
+	--header=$'CTRL-T to toggle month/week\nCTRL-N to go forward \nCTRL-P to go backward \nCTRL-Z to zoom \n\n' \
+	--bind=enter:replace-query+print-query

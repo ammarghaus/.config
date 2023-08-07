@@ -89,23 +89,6 @@ ctrl + alt - l ; layout
 layout < alt - b : yabai -m config layout bsp; skhd -k "ctrl - escape"
 layout < alt - s : yabai -m config layout stack; skhd -k "ctrl - escape"
 
-# from 'default' mode, activate mode 'wallpaper'
-ctrl + alt - b ; wallpaper
-# wallpapers
-wallpaper < alt - w : wallpapers; skhd -k "ctrl - escape"
-wallpaper < alt - c : collect_wallpaper; skhd -k "ctrl - escape"
-wallpaper < alt - k : kick_wallpaper && wallpapers; skhd -k "ctrl - escape"
-wallpaper < alt - b : black_wallpaper; skhd -k "ctrl - escape"
-
-# from 'default' mode, activate mode 'timer'
-ctrl + alt - t ; timer
-
-timer < alt - c : sb; skhd -k "ctrl - escape"
-timer < shift + alt - s : su; skhd -k "ctrl - escape"
-timer < alt - s : watson stop; skhd -k "ctrl - escape"
-timer < alt - r : watson restart -g; skhd -k "ctrl - escape"
-timer < shift + alt - r : watson restart -2 -g; skhd -k "ctrl - escape"
-
 # from 'default' mode, activate mode 'music'
 alt + ctrl - m ; music
 music < alt - n : osascript -e 'tell application "Spotify" to next track'; skhd -k "ctrl - escape"
@@ -121,7 +104,7 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 
 # focus stacked window
 alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
-alt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+shift + alt - n : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -156,20 +139,16 @@ alt - t : yabai -m window --toggle float;\
 #           yabai -m window --toggle pip#
 
 # Restart yabai
-alt + ctrl - r : launchctl kickstart -k "gui/"(id -u)"/homebrew.mxcl.yabai"
+alt + ctrl - r : yabai --restart-service
 
 # Openers
-shift + ctrl - e : open /Applications/Microsoft\ Edge.app/
-shift + ctrl - q : open /Applications/qutebrowser.app/
-shift + ctrl - o : open /Applications/Alacritty.app/
-shift + ctrl - i : open /Applications/Slack.app/
-shift + ctrl - k : open /Applications/Spotify.app/
-shift + ctrl - 0x2B : open /Applications/Discord.app/
-shift + ctrl - x : open /Applications/WhatsApp.app/
-
-# Tmux sessions
-shift + ctrl - g : alacritty msg create-window -e tmux new -A -s shorty
-shift + ctrl - c : alacritty msg create-window -e tmux new -A -s agenda calcurse
+shift + ctrl - e : open -a Microsoft\ Edge
+shift + ctrl - q : open -a qutebrowser
+shift + ctrl - o : open -a Alacritty
+shift + ctrl - i : open -a Slack
+shift + ctrl - k : open -a Spotify
+shift + ctrl - 0x2B : open -a Discord
+shift + ctrl - x : open -a WhatsApp
 
 # Link openers
 shift + ctrl - b : open 'https://github.com/orgs/nerds-and-company/packages?repo_name=blocks'

@@ -9,8 +9,6 @@ vim.opt.wildmenu        =  true
 vim.opt.wildmode        =  'longest:full'
 vim.opt.textwidth       =  120
 vim.opt.colorcolumn     =  '+1'
-vim.opt.shiftwidth      =  4
-vim.opt.tabstop         =  4
 vim.opt.so              =  999
 
 vim.api.nvim_set_hl(0, 'linenr', { ctermfg = 'DarkGrey' })

@@ -5,8 +5,8 @@ local on_attach = function(client, bufnr)
 end
 
 
-require 'lspconfig'.sumneko_lua.setup { on_attach = on_attach }
 require('lspconfig').solargraph.setup { on_attach = on_attach }
+require('lspconfig').lua_ls.setup { on_attach = on_attach }
 
 map('n', '<leader>l', ':lua vim.diagnostic.disable()<CR>', opts)
 map('n', '<leader>ll', ':lua vim.diagnostic.enable()<CR>', opts)
