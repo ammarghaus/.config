@@ -1,9 +1,9 @@
+source ~/.aliases
 source ~/.secrets
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-	source ~/.aliases
-end
+source /usr/local/opt/asdf/libexec/asdf.fish
 
 fish_add_path /opt/homebrew/opt/libpq/bin
+fish_add_path /usr/local/opt/libpq/bin
+
+source ~/.config/fish/functions/__spit_pwd.fish
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+base_url="https://nerds.simplicate.nl/api/v2/"
+auth_key_header="Authentication-Key: $SIMPLICATE_KEY"
+auth_secret_header="Authentication-Secret: $SIMPLICATE_SECRET"
+employee_id="employee:f5587cd5cfc81bae6d44e34a3f0f8c3d"
+separator="	"

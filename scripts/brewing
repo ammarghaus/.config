@@ -1,45 +1,49 @@
-history | grep brew
-brew services restart yabai
-brew install imagemagick
-brew install imagemagic
-brew install math
-brew install hub
-env -i HOME="$HOME" bash -l -c 'eval $(/opt/homebrew/bin/brew shellenv)'
-bash -c '/opt/homebrew/bin/brew shellenv'
-bash -c '/opt/homebrew/bin/brew shelenv'
-bash -x '/opt/homebrew/bin/brew shelenv'
-bash -x '/opt/homebrew/bin shelenv'
-bash -x 'brew shellenv'
-env -i HOME="$HOME" bash -l -c 'eval $(brew shellenv)'
-bash -l -c 'eval $(brew shellenv)'
-eval (brew shellenv)
-eval (brew printenv)
-brew shellenv
-brew --help
-brew update
-brew upgrade
-brew --prefix
-eval "(homebrew/bin/brew shellenv)"
-eval "$(homebrew/bin/brew shellenv)"
-brew install direnv
-brew install gnu-tar
-brew install gpg
-brew install tar gpg
-brew install jq
+#!/bin/bash
+
+set -e
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/ammar/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew tap heroku/brew && brew install heroku
-/opt/homebrew/opt/fzf/install
-brew reinstall fzf
-brew install fzf
-brew install libpq
-brew install gcalcli
-brew install lazygit lazydocker
 brew tap ankitpokhrel/jira-cli
-brew install jira-cli
-brew install gh
-brew install rg
-brew install nnn
-chsh -s /opt/homebrew/bin/fish
+
+brew install --cask slack microsoft-edge ubersicht 1password 1password-cli
+
+brew install \
+	docker \
+	imagemagick \
+	hub \
+	direnv \
+	gnu-tar \
+	gpg \
+	jq \
+	fzf \
+	libpq \
+	gcalcli \
+	lazygit \
+	lazydocker \
+	jira-cli \
+	gh \
+	rg \
+	nnn \
+	asdf \
+	fish \
+	lua-language-server \
+	koekeishiya/formulae/skhd \
+	koekeishiya/formulae/yabai \
+	wallpaper \
+	alacritty \
+	ripgrep \
+	libpq \
+	fd \
+	calcurse
+
+skhd --start-service
+yabai --start-service
+/opt/homebrew/opt/fzf/install
 sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
-brew reinstall asdf
-brew install asdf
-brew install lua-language-server
+chsh -s /opt/homebrew/bin/fish
+
+
+cp ~/secrets ~/.secrets

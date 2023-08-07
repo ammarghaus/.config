@@ -23,3 +23,5 @@ map('n', '<leader>rr', ':silent !touch tmp/restart.txt<CR>', opts)
 
 map('i', '<C-l>', "<C-R>=system('next_pr_link')[0:-2]<CR>", opts)
 map('i', '<C-d>', "<C-R>=system('next_pr_nu')[0:-2]<CR>", opts)
+
+map('n', '<leader>gy', ':Goyo 120<CR>:source ~/.config/nvim/lua/user/settings.lua<CR>', opts)

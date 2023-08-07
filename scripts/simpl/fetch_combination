@@ -1,8 +1,7 @@
 #!/bin/bash
 
 fetch_command="`dirname $0`/simpl/fetch_projects"
-project_selection=`: | fzf \
-	--bind "start:reload:$fetch_command '$project' $start_date $end_date" \
+project_selection=`$fetch_command "$project" $start_date $end_date | fzf \
 	--bind "change:reload:$fetch_command '{q}' $start_date $end_date" \
 	--header 'Select a project to log time on.' --with-nth=1..-2`
 
@@ -40,13 +39,15 @@ agenda_command="agenda_options --date $start_date"
 
 jira_command="jira sprint list --current --show-all-issues --plain --no-headers --columns summary"
 
-if [ ! -z $meeting ]
+if [ -z $description ]
 then
-	base_command=$agenda_command
-	query=$meeting
-else
-	base_command=$jira_command
-fi
+	if [ ! -z $meeting ]
+	then
+		base_command=$agenda_command
+		query=$meeting
+	else
+		base_command=$jira_command
+	fi
 
 description=`$base_command | fzf \
 	--query "$query" \
@@ -67,3 +68,4 @@ description=`$base_command | fzf \
 		}
 	}'`
 
+fi

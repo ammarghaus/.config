@@ -2,5 +2,5 @@
 *.swo
 tags
 *.tags
-.config/
+.config.git/
 scripts/simpl/vars

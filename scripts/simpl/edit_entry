@@ -1,0 +1,6 @@
+#!/bin/bash
+. `dirname $0`/vars
+
+curl  -s -G -H "$auth_key_header" -H "$auth_secret_header" "$base_url""hours/hours/$1"
+
+

@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
 	pattern = { '*' },
 	group = augroup,
 	desc = 'Start terminal in insert mode.',
-	command = [[startinsert]]
+	command = [[startinsert | setlocal bufhidden=hide]]
 })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -55,3 +55,14 @@ vim.api.nvim_create_autocmd("VimLeave", {
 	command = 'call chansend(v:stderr, "\\033]7;\\033\\\\")',
 })
 
+-- set tmux pane path when cwd changes
+vim.api.nvim_create_autocmd("dirchanged", {
+	pattern = "*",
+	command = 'call chansend(v:stderr, printf("\\033]7;%s\\033", v:event.cwd))',
+})
+
+-- unset tmux pane path when nvim closes
+vim.api.nvim_create_autocmd("VimLeave", {
+	pattern = "*",
+	command = 'call chansend(v:stderr, "\\033]7;\\033\\\\")',
+})

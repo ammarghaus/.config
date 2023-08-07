@@ -12,10 +12,10 @@ alias lzd='lazydocker'
 alias open-passwords='export OP_SESSION_nerdsandcompany=(op signin nerdsandcompany --output=raw)'
 
 # config repo
-alias config='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
-alias lazy_config='lazygit --git-dir=$HOME/.config/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
+alias lazy_config='lazygit --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 
 # notes repo
-alias notes='/usr/bin/git --git-dir=$HOME/notes/ --work-tree=$HOME'
-alias lazy_notes='lazygit --git-dir=$HOME/notes/ --work-tree=$HOME'
+alias notes='/usr/bin/git --git-dir=$HOME/notes.git/ --work-tree=$HOME'
+alias lazy_notes='lazygit --git-dir=$HOME/notes.git/ --work-tree=$HOME'
 alias yarn-linked='find . -type l | grep -v .bin'
