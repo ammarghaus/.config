@@ -1,0 +1,5 @@
+#!/bin/bash
+. `dirname $0`/vars
+
+curl  -s -X PUT -H 'Content-Type: application/json' -H "$auth_key_header" -H "$auth_secret_header" "$base_url""timers/timer/$1" \
+	-d "{ \"state\": \"paused\", \"employee_id\": \"$employee_id\" }"

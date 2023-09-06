@@ -1,0 +1,69 @@
+#!/bin/bash
+
+fetch_command="`dirname $0`/simpl/fetch_projects"
+project_selection=`: | fzf \
+	--bind "start:reload:$fetch_command '$project' $start_date $end_date" \
+	--bind "change:reload:$fetch_command '{q}' $start_date $end_date" \
+	--header 'Select a project to log time on.' --with-nth=1..-2`
+
+project_id=${project_selection#*$separator}
+project_name=${project_selection%$separator*}
+service_selection=`curl -s -G -H "$auth_key_header" -H "$auth_secret_header" "$base_url""hours/projectservices" \
+	-d "q[employee_id]=$employee_id" \
+	-d "q[project_id]=$project_id" \
+	-d "q[start_date]=$start_date" \
+	-d "q[end_date]=$end_date" \
+	-d "sort=name" \
+	| jq -r ".data[] | .name + \"$separator\" + .id" \
+	| fzf --header "Select a service to log time on, for project $project_name." --with-nth=1..-2 \
+	${service:+ --query $service}`
+
+service_id=${service_selection#*$separator}
+service_name=${service_selection%$separator*}
+
+hours_type_selection=`curl -s -G -H "$auth_key_header" -H "$auth_secret_header" \
+	"$base_url""hours/projectservicehourstypes" \
+	-d "q[projectservice_id]=$service_id" \
+	-d "q[project_id]=$project_id" \
+	-d "q[start_date]=$start_date" \
+	-d "q[end_date]=$end_date" \
+	-d "sort=label" \
+	| jq -r ".data[] | .label + \"$separator\" + .id" \
+	| fzf --header "Select a hours type for project $project_name service $service_name." \
+	${hours_type:+ --query $hours_type} \
+	--with-nth=1..-2`
+
+hours_type_id=${hours_type_selection#*$separator}
+hours_type_name=${hours_type_selection%$separator*}
+
+agenda_command="agenda_options --date $start_date"
+
+jira_command="jira sprint list --current --show-all-issues --plain --no-headers --columns summary"
+
+if [ ! -z $meeting ]
+then
+	base_command=$agenda_command
+	query=$meeting
+else
+	base_command=$jira_command
+fi
+
+description=`$base_command | fzf \
+	--query "$query" \
+	--bind "ctrl-a:reload:$jira_command -a \`jira me\`" \
+	--bind "ctrl-s:reload:$jira_command -s'To do'" \
+	--bind "ctrl-i:reload:$jira_command -s'In Progress'" \
+	--bind "ctrl-t:reload:$jira_command -s'Testable'" \
+	--bind "ctrl-d:reload:$jira_command -s'Done'" \
+	--bind "ctrl-r:reload:$jira_command" \
+	--bind "ctrl-g:reload:$agenda_command" \
+	--header 'Select a project to log time on.' \
+	| awk -F'\t*' '{
+		if ($1 ~ /.* to .*/) {
+			print $2
+		}
+		else {
+			print $1" : "$2
+		}
+	}'`
+

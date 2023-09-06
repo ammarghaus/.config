@@ -6,30 +6,17 @@ set -e
 . `dirname $0`/simpl/vars
 
 FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --ansi --height=50% --select-1"
-# date=${date:-`date -I`}
 start_date=`date_picker --query $date`
 start_date=${start_date% *}
 end_date=$start_date
 
-hours=`curl -s -G -H "$auth_key_header" -H "$auth_secret_header" "$base_url""hours/hours" \
-	-d "sort=start_date" \
-	-d "q[employee.id]=$employee_id" \
-	-d "q[start_date][ge]=$start_date%2000:00:00" \
-	-d "q[start_date][lt]=$end_date%2023:59:59" \
-	-d "select=id,start_date,end_date,project.,projectservice.,type.,hours,note" \
-	| jq '.data
-		| map({
-		id: .id,
-		project: .project.name[0:30],
-		service: .projectservice.name[0:20],
-		type: .type.label[0:10],
-		hours: .hours,
-		note: .note | sub("\n"; " "),
-		date: .start_date | match("(.*) .*") | .captures[0].string,
-		start: .start_date | match(".* (.*)") | .captures[0].string,
-		end: .end_date | match(".* (.*)") | .captures[0].string
-		})'`
 
+hours=`curl -s -G -H "$auth_key_header" -H "$auth_secret_header" "$base_url""timers/timer" \
+	-d "sort=start_date" \
+	-d "q[employee.id]=$employee_id" `
+
+		echo $hours
+		exit
 total=`jq '[.[] | .hours] | add' <<< $hours | bc -l \
 	| awk -F. ' { print sprintf("%02d:%02d", $1, substr($2, 0, 2) * .6) }'`
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+. `dirname $0`/vars
+
+curl  -s -X DELETE -H "$auth_key_header" -H "$auth_secret_header" "$base_url""timers/timer/$1"

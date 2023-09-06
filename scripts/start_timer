@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+
+. params
+. `dirname $0`/simpl/vars
+
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --ansi --height=50% --select-1"
+
+start_date=`date -I`
+start_time=`time_picker 0 0 $start_time`
+
+. `dirname $0`/simpl/fetch_combination
+
+request_string="{
+\"employee_id\":\"$employee_id\",
+\"project_id\":\"$project_id\",
+\"projectservice_id\":\"$service_id\",
+\"hourstype_id\":\"$hours_type_id\",
+\"description\":\"$description\",
+\"start_time\":\"$start_date"T"$start_time":00"\"
+}"
+
+curl -H "$auth_key_header" -H "$auth_secret_header" -H 'Content-Type: application/json' "$base_url""timers/timer" \
+	-d "$request_string"
